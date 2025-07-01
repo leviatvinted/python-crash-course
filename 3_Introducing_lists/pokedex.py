@@ -9,6 +9,7 @@ and then uses each function introduced in this chapter at least once.
 MY_POKEDEX = []
 HELD_POKEMON = []
 STORED_POKEMON = []
+BILLS_PC = []
 
 MY_ITEMS = ['pokédex',]
 RIVAL_POKEMON = []
@@ -111,3 +112,43 @@ print("\nYou walk into the local Pokémon Center.")
 print("\nYou decide to store Pokémon in BILL's PC")
 print("\nYou currently hold the following Pokémon:")
 print(sorted(HELD_POKEMON))
+
+print("\nDeposit POKÉMON")
+print("\nWhich POKÉMON do you want to put away?")
+print(HELD_POKEMON)
+
+del HELD_POKEMON[1]
+BILLS_PC.insert(0, 'ratata')
+
+print("\nRATATA has been deposited in BOX 1")
+
+print("\nDeposit POKÉMON")
+print("\nWhich POKÉMON do you want to put away?")
+print(HELD_POKEMON)
+
+HELD_POKEMON.remove('pidgey')
+BILLS_PC.insert(0, 'pidgey')
+
+print("\nGood to see you! How is your Pokédex coming? Here, let me take a look!")
+print("\tPokémon seen: " + str(len(MY_POKEDEX)))
+POKEMON_CAUGHT = len(HELD_POKEMON) + len(STORED_POKEMON) + len(BILLS_PC)
+print("\tPokémon caught: " + str(POKEMON_CAUGHT))
+
+print("\nPOKÉMON in POKÉDEX")
+print(MY_POKEDEX)
+
+print("\nSort POKÉMON in alphabetical order")
+MY_POKEDEX.sort()
+print(MY_POKEDEX)
+
+print("\nSort POKÉMON in reverse alphabetical order")
+MY_POKEDEX.sort(reverse=True)
+print(MY_POKEDEX)
+
+print("\nSort POKÉMON in alphabetical order")
+MY_POKEDEX.sort()
+print(MY_POKEDEX)
+
+print("\nSort POKÉMON in reverse alphabetical order")
+MY_POKEDEX.reverse()
+print(MY_POKEDEX)
