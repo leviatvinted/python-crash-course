@@ -18,9 +18,9 @@ I really love pizza!
 FAV_PIZZAS = ['pepperoni', 'neapolitan', 'quattro formaggi']
 
 # Version 1
-# for pizzas in FAV_PIZZAS:
+# for pizza in FAV_PIZZAS:
 #     print(pizzas.title())
 
-for pizzas in FAV_PIZZAS:
-    print("I love a " + pizzas.title() + " pizza!")
+for pizza in FAV_PIZZAS:
+    print("I love a " + pizza.title() + " pizza!")
 print("\nI really really love pizza!")
