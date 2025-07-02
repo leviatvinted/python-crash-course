@@ -30,6 +30,7 @@ for choice in BUFFET_OPTIONS:
 BUFFET_OPTIONS = ('belgian fries', 'salad', 'duck', 'spare-ribs',
                   'ice-cream'
                   )
+
 print("\nThe restaurant has revised their menu.")
 print("\nThe new buffet options are:")
 for choice in BUFFET_OPTIONS:
