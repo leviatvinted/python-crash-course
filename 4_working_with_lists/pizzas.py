@@ -13,34 +13,12 @@ pizza.
 how much you like pizza. The output should consist of three or more lines
 about the kinds of pizza you like and then an additional sentence, such as
 I really love pizza!
-"""
 
-FAV_PIZZAS = ['pepperoni', 'neapolitan', 'quattro formaggi']
+### Continues with 11 and 12 ###
 
-# Version 1
-# for pizza in FAV_PIZZAS:
-#     print(pizzas.title())
+4-11. My Pizzas, Your Pizzas: 
 
-for pizza in FAV_PIZZAS:
-    print("I love a " + pizza.title() + " pizza!")
-print("\nI really really love pizza!")
-
-
-"""
-4-10. Slices: 
-Using one of the programs you wrote in this chapter, add several
-lines to the end of the program that do the following:
-
-• Print the message, The first three items in the list are:. Then use a slice to
-print the first three items from that program’s list.
-
-• Print the message, Three items from the middle of the list are:. Use a slice
-to print three items from the middle of the list.
-
-• Print the message, The last three items in the list are:. Use a slice to print
-the last three items in the list.
-
-4-11. My Pizzas, Your Pizzas: Start with your program from Exercise 4-1
+Start with your program from Exercise 4-1
 (page 60). Make a copy of the list of pizzas, and call it friend_pizzas.
 Then, do the following:
 
@@ -59,3 +37,26 @@ for loops when printing to save space. Choose a version of foods.py, and
 write two for loops to print each list of foods.
 """
 
+FAV_PIZZAS = ['pepperoni', 'neapolitan', 'quattro formaggi']
+FRIEND_PIZZAS = FAV_PIZZAS[:]
+
+# Version 1
+# for pizza in FAV_PIZZAS:
+#     print(pizzas.title())
+
+for pizza in FAV_PIZZAS:
+    print("I love a " + pizza.title() + " pizza!")
+print("\nI really really love pizza!")
+
+print("\nAdding Shoarma pizza to my favorite pizzas...")
+FAV_PIZZAS.append('shoarma')
+print("\nAdding Greek Style Pizza to my friends favorite pizzas...")
+FRIEND_PIZZAS.append('greek style')
+
+print("\nMy favorite pizzas are:")
+for pizza in FAV_PIZZAS:
+    print(pizza.title())
+
+print("\nMy friend's favorite pizzas are:")
+for pizza in FRIEND_PIZZAS:
+    print(pizza.title())
