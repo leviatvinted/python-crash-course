@@ -37,7 +37,6 @@ class User():
         print("\nTrying to login...")
         self.login_attempts += 1
 
-    
     def reset_login_attempts(self):
         print("\nLogin successful. Reseting login attempts..")
         self.login_attempts = 0
