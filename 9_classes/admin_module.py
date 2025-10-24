@@ -8,6 +8,8 @@ everything is working correctly.
 """
 
 class User():
+    """Represents a profile for a user on a system, including personal details 
+    and login attempt tracking."""
     def __init__(self, first_name, last_name, age, location_country,
                  location_city):
         self.first_name = first_name
@@ -39,7 +41,10 @@ class User():
     def read_login_attempts(self):
         print("Login(s) attempted: " + str(self.login_attempts))
 
+
 class Privileges():
+    """A class to define the specific administrative privileges available on 
+    the system."""
     def __init__(self):
         self.privileges = ['can add post', 'can delete post', 'can ban user',
                            'can unban user', 'can add group',
@@ -50,7 +55,10 @@ class Privileges():
         for privilege in self.privileges:
             print("\t- " + privilege)
 
+
 class Admin(User):
+    """Represents an administrator user, inheriting from User and having an 
+    associated set of Privileges."""
     def __init__(self, first_name, last_name, age, location_country,
                  location_city):
         super().__init__(first_name, last_name, age, location_country,
