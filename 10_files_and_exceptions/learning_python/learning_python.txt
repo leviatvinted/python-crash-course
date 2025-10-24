@@ -1,0 +1,5 @@
+In Python you can create lists and tuples.
+In Python you can do math.
+In Python you can analyze data.
+In Python you can automate workflows.
+In Python you can create programs.
