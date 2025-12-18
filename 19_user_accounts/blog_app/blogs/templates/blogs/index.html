@@ -9,15 +9,19 @@
             <li>
                 <h3>{{ blogpost.title }}</h3>
                 <p>{{ blogpost.text }}</p>
+                {% if user.is_authenticated and blogpost.owner == user %}
                 <p>
                     <a href="{% url 'blogs:edit_blogpost' blogpost.id %}">Edit blogpost</a>
                 </p>
+                {% endif %}
             </li>
         {% empty %}
             <li>No blogposts have been added yet.</li>
         {% endfor %}
     </ul>
 
+    {% if user.is_authenticated %}
     <a href="{% url 'blogs:new_blogpost' %}">Add a new blogpost</a>
+    {% endif %}
 
 {% endblock content %}
