@@ -3,3 +3,4 @@ venv/
 ll_env
 .blog_env
 **/__pycache__/
+.DS_Store
