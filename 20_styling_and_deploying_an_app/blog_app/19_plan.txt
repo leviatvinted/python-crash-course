@@ -1,0 +1,46 @@
+19-1. Blog: Start a new Django project called Blog. Create an app called blogs
+in the project, with a model called BlogPost. The model should have fields like
+title, text, and date_added. Create a superuser for the project, and use the
+admin site to make a couple of short posts. Make a home page that shows all
+posts in chronological order.
+Create a form for making new posts and another for editing existing posts.
+Fill in your forms to make sure they work.
+
+DONE 1. Start a new Django project called Blog
+DONE 2. Create an app called blogs in the project
+DONE 3. Create model called BlogPost with fields like title, text, and date_added
+DONE 4. Create a superuser for the project
+DONE 5. use the admin site to make a couple of short posts
+DONE 6. Make a home page that shows all posts in chronological order
+DONE 7. Create a form for making new posts and 
+DONE 8. Create a form for editing existing posts
+DONE 9. Fill in your forms to make sure they work.
+
+superuser
+blogs_admin
+blogs12345
+
+19-2. Blog Accounts: Add a user authentication and registration system to the
+Blog project you started in Exercise 19-1 (page 438). Make sure logged-in
+users see their username somewhere on the screen and unregistered users see
+a link to the registration page.
+
+DONE 1. Add a user authentication and registration
+DONE 2. Make sure logged-in users see their username somewhere on the screen 
+DONE 3. unregistered users see a link to the registration page
+
+19-5. Protected Blog: In your Blog project, make sure each blog post is con-
+nected to a particular user. Make sure all posts are publicly accessible but only
+registered users can add posts and edit existing posts. In the view that allows
+users to edit their posts, make sure the user is editing their own post before pro-
+cessing the form.
+
+DONE 1. make sure each blog post is connected to a particular user
+CHECK 2. Make sure all posts are publicly accessible 
+DONE 3. Only registered users can add posts and edit existing posts.
+DONE 4. In the view that allows users to edit their posts, make sure the user is editing 
+their own post before processing the form.
+
+Bonus: Hide edit and add new blogpost buttons when not logged in
+BONUS: Hide edit button if user is not the owner of the topic
+BONUS: Hide A
