@@ -1,0 +1,47 @@
+{% extends "blogs/base.html" %}
+
+{% block header %}
+  <div class="jumbotron">
+    <h1>Post your own blog!</h1>
+  </div>
+{% endblock header %}
+
+{% block content %}
+  {% for blogpost in blogposts %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{ blogpost.title }}
+            <span class="pull-right">
+                <small style="color: #999; margin-right: 10px;">
+                    {{ blogpost.date_added|date:"M d, Y" }}
+                </small>
+                {% if user.is_authenticated and blogpost.owner == user %}
+                  <a href="{% url 'blogs:edit_blogpost' blogpost.id %}"
+                    class="btn btn-xs btn-default">
+                    Edit blogpost
+                  </a>
+                {% endif %}
+            </span>
+          </h3>
+        </div>
+        <div class="panel-body">
+            {{ blogpost.text }}
+        </div>
+    </div>
+
+  {% empty %}
+    No blogposts have been added yet.
+  {% endfor %}
+
+  <hr>
+
+
+  {% if user.is_authenticated %}
+    <a href="{% url 'blogs:new_blogpost' %}" class="btn btn-default">Add New Post</a>
+  {% else %}
+    <a href="{% url 'users:register' %}">Register an account</a> to create
+      your own blog post.
+  {% endif %}
+
+{% endblock content %}

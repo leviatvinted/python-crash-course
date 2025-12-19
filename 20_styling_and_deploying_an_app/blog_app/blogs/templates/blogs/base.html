@@ -1,0 +1,95 @@
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning Log</title>
+    {% bootstrap_css %}
+    <style>
+      body { background-color: #222; color: #ccc; }
+      .page-header { border-bottom: 1px solid #444; color: #ccc; }
+      .jumbotron {
+          background-color: #333;
+          color: #ffffff;
+          border: 1px solid #444;
+      }
+      ul {
+          list-style-type: none;
+          padding-left: 0;
+      }
+      hr {
+          border-top: 1px solid #444;
+      }
+      .form-control {
+          background-color: #333;
+          color: #ffffff;
+          border-color: #555;
+      }
+      .panel-default {
+          background-color: #333;
+          border-color: #444;
+      }
+      .panel-default > .panel-heading {
+          background-color: #444;
+          border-color: #555;
+          color: #ffffff;
+      }
+      .panel-body {
+          color: #ccc;
+      }
+      .panel-heading h3 {
+          margin: 0;
+      }
+    </style>
+
+
+    {% bootstrap_javascript %}
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+            data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
+          </button>
+          <a class="navbar-brand" href="{% url 'blogs:index' %}">
+            Blog
+          </a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse">
+          <ul class="nav navbar-nav">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'blogs:new_blogpost' %}">Add New Post</a></li>
+            {% endif %}          
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li><a>Hello, {{ user.username }}</a></li>
+              <li><a href="{% url 'users:logout' %}">Log out</a></li>
+            {% else %}
+              <li><a href="{% url 'users:register' %}">Register</a></li>
+              <li><a href="{% url 'users:login' %}">Log in</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      
+      <div class="page-header">
+        {% block header %}{% endblock header %}
+      </div>
+      <div>
+        {% block content %}{% endblock content %}
+      </div>
+    </div>
+  </body>
